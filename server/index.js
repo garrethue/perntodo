@@ -9,7 +9,6 @@ app.use(cors()); //anytime you are going to create MIDDLEWARE you need to use ap
 app.use(express.json()); //by using this, essentially gives us access to request.body and will return json data
 
 //ROUTES//
-
 //create a todo
 app.post("/todos", async (req, res) => {
   try {
