@@ -1,5 +1,8 @@
 import React, { Fragment, useEffect, useState } from "react";
 
+//component
+import EditTodo from "./EditTodo";
+
 const ListTodos = () => {
   //todos will contain an array of objects. Each object represents a row in our todo table!
   //below in the JSX, we map over the todos array and grab the todo.description
@@ -40,7 +43,7 @@ const ListTodos = () => {
 
   return (
     <Fragment>
-      <table class="table table-dark mt-5 text-center">
+      <table class="table mt-5 text-center">
         <thead>
           <tr>
             <th>Description</th>
@@ -56,10 +59,12 @@ const ListTodos = () => {
                   </tr>*/}
           {todos.map((todo) => (
             <tr key={todo.todo_id}>
-              {" "}
+              {/* key={todo.todo_id} allows me to u */}
               {/* this makes each row unique based on the primary key of the database table todo */}
               <td>{todo.description}</td>
-              <td>Edit</td>
+              <td>
+                <EditTodo todo={todo} />
+              </td>
               <td>
                 <button
                   className="btn btn-danger"
